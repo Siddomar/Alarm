@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import static android.R.attr.enabled;
+
 public class MainActivity extends AppCompatActivity {
 
     //the timepicker object
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         //creating a new intent specifying the broadcast receiver
         Intent i = new Intent(this, MyAlarm.class);
+
+        /*Intent alarmChanged = new Intent("android.intent.action.ALARM_CHANGED");
+        alarmChanged.putExtra("alarmSet", true*//*false if you want to hide it*//*);
+        sendBroadcast(alarmChanged);*/
 
         //creating a pending intent using the intent
         PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
